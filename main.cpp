@@ -2,6 +2,8 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 
+#include "BlockGenerator.hpp"
+
 int main(int argc, char *argv[])
 {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
@@ -9,10 +11,13 @@ int main(int argc, char *argv[])
 #endif
     QGuiApplication app(argc, argv);
 
+    BlockGenerator* blocks = BlockGenerator::getInstance();
+    blocks->doSomething();
+
     QQmlApplicationEngine* engine = new QQmlApplicationEngine();
 
-    engine->rootContext()->setContextProperty("screenWidth", 1024);
-    engine->rootContext()->setContextProperty("screenHeight", 600);
+    engine->rootContext()->setContextProperty("screenWidth", SCREEN_WIDTH);
+    engine->rootContext()->setContextProperty("screenHeight", SCREEN_HEIGHT);
 
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(

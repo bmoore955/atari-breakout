@@ -1,20 +1,22 @@
 #pragma once
 
 #include <QObject>
-#include <QList>
+#include <QDebug>
+
+#define SCREEN_WIDTH 1024
+#define SCREEN_HEIGHT 600
 
 class BlockGenerator : public QObject
 {
     Q_OBJECT
+private:
+    explicit BlockGenerator(QObject *parent = nullptr);
+    static BlockGenerator* m_instance;
+
 public:
     static BlockGenerator* getInstance();
 
-signals:
-
-private:
-    explicit BlockGenerator(QObject *parent = nullptr);
-
-    QList<int> generateRow();
-
-    BlockGenerator* m_instance;
+    void doSomething() {
+        qDebug() << "hello";
+    }
 };
