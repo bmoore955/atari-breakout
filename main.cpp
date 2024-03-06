@@ -1,5 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
 
 int main(int argc, char *argv[])
 {
@@ -8,10 +9,14 @@ int main(int argc, char *argv[])
 #endif
     QGuiApplication app(argc, argv);
 
-    QQmlApplicationEngine engine;
+    QQmlApplicationEngine* engine = new QQmlApplicationEngine();
+
+    engine->rootContext()->setContextProperty("screenWidth", 1024);
+    engine->rootContext()->setContextProperty("screenHeight", 600);
+
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(
-        &engine,
+        engine,
         &QQmlApplicationEngine::objectCreated,
         &app,
         [url](QObject *obj, const QUrl &objUrl) {
@@ -19,7 +24,7 @@ int main(int argc, char *argv[])
                 QCoreApplication::exit(-1);
         },
         Qt::QueuedConnection);
-    engine.load(url);
+    engine->load(url);
 
     return app.exec();
 }
