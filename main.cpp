@@ -11,9 +11,6 @@ int main(int argc, char *argv[])
 #endif
     QGuiApplication app(argc, argv);
 
-    BlockGenerator* blocks = BlockGenerator::getInstance();
-    blocks->doSomething();
-
     QQmlApplicationEngine* engine = new QQmlApplicationEngine();
 
     engine->rootContext()->setContextProperty("screenWidth", SCREEN_WIDTH);
