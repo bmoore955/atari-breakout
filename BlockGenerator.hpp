@@ -20,5 +20,4 @@ public:
     QList<int> generateRow();
 
 private:
-    static BlockGenerator* m_instance;
 };

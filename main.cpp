@@ -11,14 +11,14 @@ int main(int argc, char *argv[])
 #endif
     QGuiApplication app(argc, argv);
 
-    QQmlApplicationEngine* engine = new QQmlApplicationEngine();
+    QQmlApplicationEngine engine;
 
-    engine->rootContext()->setContextProperty("screenWidth", SCREEN_WIDTH);
-    engine->rootContext()->setContextProperty("screenHeight", SCREEN_HEIGHT);
+    engine.rootContext()->setContextProperty("screenWidth", SCREEN_WIDTH);
+    engine.rootContext()->setContextProperty("screenHeight", SCREEN_HEIGHT);
 
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(
-        engine,
+        &engine,
         &QQmlApplicationEngine::objectCreated,
         &app,
         [url](QObject *obj, const QUrl &objUrl) {
@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
                 QCoreApplication::exit(-1);
         },
         Qt::QueuedConnection);
-    engine->load(url);
+    engine.load(url);
 
     return app.exec();
 }
