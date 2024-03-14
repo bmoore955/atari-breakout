@@ -9,15 +9,11 @@
 
 class BlockGenerator : public QObject
 {
-    Q_OBJECT
-
-private:
-    explicit BlockGenerator(QObject *parent = nullptr);
-
+    Q_OBJECT    
 public:
     static BlockGenerator* getInstance();
-
     QList<int> generateRow();
-
 private:
+    explicit BlockGenerator(QObject *parent = nullptr);
+    static BlockGenerator* m_instance;
 };
