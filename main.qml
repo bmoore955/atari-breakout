@@ -14,6 +14,10 @@ Window {
         readonly property int space: 2
 
         spacing: space
+        anchors {
+            verticalCenter: parent.verticalCenter
+            verticalCenterOffset: -50
+        }
 
         Row {
             spacing: blocksCol.space
