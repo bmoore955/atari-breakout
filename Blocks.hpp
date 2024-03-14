@@ -1,9 +1,7 @@
 #pragma once
 
 #include <QObject>
-#include <QDebug>
 #include <QList>
-#include <QTimer>
 #include "BlockGenerator.hpp"
 
 class Blocks : public QObject

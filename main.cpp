@@ -1,8 +1,6 @@
-#include <QDebug>
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
-#include <QTimer>
 
 #include "BlockGenerator.hpp"
 #include "Blocks.hpp"
