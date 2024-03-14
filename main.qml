@@ -2,11 +2,11 @@ import QtQuick 2.15
 import QtQuick.Window 2.15
 
 Window {
-    width: screenWidth
-    height: screenHeight
-    visible: true
     title: qsTr("Hello World")
     visibility: Window.Minimized
+    width: screenWidth
+    height: screenHeight
+    color: "black"
 
     Column {
         width: parent.width
