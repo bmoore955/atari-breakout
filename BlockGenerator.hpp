@@ -13,6 +13,7 @@ class BlockGenerator : public QObject
 public:
     static BlockGenerator* getInstance();
     QList<int> generateRow();
+    int smallestBlock(QList<int> row);
 private:
     explicit BlockGenerator(QObject *parent = nullptr);
     static BlockGenerator* m_instance;
