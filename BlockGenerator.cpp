@@ -26,5 +26,7 @@ QList<int> BlockGenerator::generateRow()
         total += (next + spacing);
     }
 
+    lengths.append(SCREEN_WIDTH - total);
+
     return lengths;
 }
