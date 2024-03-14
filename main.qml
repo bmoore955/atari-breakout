@@ -9,14 +9,16 @@ Window {
     color: "black"
 
     Column {
-        width: parent.width
-        spacing: 2
-        Row {
-            width: parent.width
-            height: 50
-            spacing: 2
-            Repeater {
+        id: blocksCol
 
+        readonly property int space: 2
+
+        spacing: space
+
+        Row {
+            spacing: blocksCol.space
+
+            Repeater {
                 model: blocks.row1.length
                 delegate: Rectangle {
                     color: "red"
@@ -25,13 +27,10 @@ Window {
                 }
             }
         }
-
         Row {
-            width: parent.width
-            height: 50
-            spacing: 2
-            Repeater {
+            spacing: blocksCol.space
 
+            Repeater {
                 model: blocks.row2.length
                 delegate: Rectangle {
                     color: "orange"
@@ -40,13 +39,10 @@ Window {
                 }
             }
         }
-
         Row {
-            width: parent.width
-            height: 50
-            spacing: 2
-            Repeater {
+            spacing: blocksCol.space
 
+            Repeater {
                 model: blocks.row3.length
                 delegate: Rectangle {
                     color: "yellow"
@@ -55,13 +51,10 @@ Window {
                 }
             }
         }
-
         Row {
-            width: parent.width
-            height: 50
-            spacing: 2
-            Repeater {
+            spacing: blocksCol.space
 
+            Repeater {
                 model: blocks.row4.length
                 delegate: Rectangle {
                     color: "green"
