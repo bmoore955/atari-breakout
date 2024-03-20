@@ -10,7 +10,11 @@ class Tester : public QObject
 public:
     explicit Tester(Blocks *blocks, QObject *parent = nullptr);
 
+    // Call all test functions.
     void updateTests();
+
+    // TEST FUNCTIONS
+    // Regenerate all blocks to make sure layouts always look good
     void testBlockGeneration();
 
 private:
