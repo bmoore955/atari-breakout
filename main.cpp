@@ -1,5 +1,10 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
+
+#include "BlockGenerator.hpp"
+#include "Blocks.hpp"
+#include "Tester.hpp"
 
 int main(int argc, char *argv[])
 {
@@ -8,7 +13,17 @@ int main(int argc, char *argv[])
 #endif
     QGuiApplication app(argc, argv);
 
+    Blocks* blocks = new Blocks();
+
+    Tester *tester = new Tester(blocks);
+    Q_UNUSED(tester);
+
     QQmlApplicationEngine engine;
+
+    engine.rootContext()->setContextProperty("screenWidth", SCREEN_WIDTH);
+    engine.rootContext()->setContextProperty("screenHeight", SCREEN_HEIGHT);
+    engine.rootContext()->setContextProperty("blocks", blocks);
+
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(
         &engine,
