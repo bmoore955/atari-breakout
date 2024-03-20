@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 
     Blocks* blocks = new Blocks();
 
-    Tester *tester = new Tester();
+    Tester *tester = new Tester(blocks);
     Q_UNUSED(tester);
 
     QQmlApplicationEngine engine;
