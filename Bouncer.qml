@@ -5,6 +5,5 @@ Rectangle {
     height: 8
     radius: 2
     color: "gray"
-
-    // TODO: add keypress responses
+    focus: true
 }
