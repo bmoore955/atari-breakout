@@ -15,5 +15,8 @@ public:
 
 private:
     Blocks *m_blocks;
-    QTimer *m_update;
+    QTimer *m_updateTimer;
+
+    // Test function time counters
+    int m_blockGenTestCounter;
 };
