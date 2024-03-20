@@ -2,7 +2,7 @@ import QtQuick 2.15
 import QtQuick.Window 2.15
 
 Window {
-    title: qsTr("Hello World")
+    title: qsTr("Atari Breakout")
     visibility: Window.Minimized
     width: screenWidth
     height: screenHeight
