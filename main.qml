@@ -68,4 +68,11 @@ Window {
             }
         }
     }
+    Bouncer {
+        anchors {
+            horizontalCenter: parent.horizontalCenter
+            bottom: parent.bottom
+            bottomMargin: 40
+        }
+    }
 }
