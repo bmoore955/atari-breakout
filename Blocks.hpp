@@ -15,8 +15,10 @@ class Blocks : public QObject
 public:
     explicit Blocks(QObject *parent = nullptr);
 
+    // Get new randomized values for all 4 rows
     void getNewRows();
 
+    // Get/Set the saved lengths for each row
     QList<int> row1() const;
     void setRow1(const QList<int> newRow1);
 

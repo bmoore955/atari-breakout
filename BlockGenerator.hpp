@@ -12,8 +12,12 @@ class BlockGenerator : public QObject
     Q_OBJECT    
 public:
     static BlockGenerator* getInstance();
+
+    // Generates a randomized list of lengths for blocks
     QList<int> generateRow();
-    int smallestBlock(QList<int> row);
+    // Finds the smallest value in a list of lengths
+    int smallest(QList<int> row);
+
 private:
     explicit BlockGenerator(QObject *parent = nullptr);
     static BlockGenerator* m_instance;

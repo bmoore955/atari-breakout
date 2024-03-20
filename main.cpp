@@ -4,6 +4,7 @@
 
 #include "BlockGenerator.hpp"
 #include "Blocks.hpp"
+#include "Tester.hpp"
 
 int main(int argc, char *argv[])
 {
@@ -13,6 +14,9 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     Blocks* blocks = new Blocks();
+
+    Tester *tester = new Tester();
+    Q_UNUSED(tester);
 
     QQmlApplicationEngine engine;
 
