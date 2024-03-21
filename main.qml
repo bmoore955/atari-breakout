@@ -69,10 +69,8 @@ Window {
         }
     }
     Ball {
-        anchors {
-            centerIn: parent
-            verticalCenterOffset: 100
-        }
+        x: 507
+        y: 425
     }
 
     Bouncer {
