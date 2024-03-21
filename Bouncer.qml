@@ -12,11 +12,9 @@ Rectangle {
     anchors.horizontalCenterOffset: moved
 
     Keys.onLeftPressed: {
-        console.log("move left")
         moved -= step
     }
     Keys.onRightPressed: {
-        console.log("move right")
         moved += step
     }
 }
