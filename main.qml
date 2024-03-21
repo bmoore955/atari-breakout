@@ -74,11 +74,5 @@ Window {
             bottom: parent.bottom
             bottomMargin: 40
         }
-        Keys.onLeftPressed: {
-            console.log("move left")
-        }
-        Keys.onRightPressed: {
-            console.log("move right")
-        }
     }
 }
