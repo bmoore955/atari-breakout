@@ -1,6 +1,8 @@
 import QtQuick 2.15
 
 Rectangle {
+    id: bouncerBase
+
     property int moved: 0
     readonly property int step: 15
 
@@ -11,10 +13,10 @@ Rectangle {
     focus: true
     anchors.horizontalCenterOffset: moved
 
-    Keys.onLeftPressed: {
-        moved -= step
-    }
+    // Checks to make sure the bouncer can't go outside the screen
+    Keys.onLeftPressed: moved -= (bouncerBase.x < step) ? bouncerBase.x : step
     Keys.onRightPressed: {
-        moved += step
+        var dist = bouncerBase.x + 200
+        moved += (screenWidth - dist < step) ? screenWidth - dist : step
     }
 }
