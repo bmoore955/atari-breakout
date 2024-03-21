@@ -68,6 +68,13 @@ Window {
             }
         }
     }
+    Ball {
+        anchors {
+            centerIn: parent
+            verticalCenterOffset: 100
+        }
+    }
+
     Bouncer {
         anchors {
             horizontalCenter: parent.horizontalCenter
