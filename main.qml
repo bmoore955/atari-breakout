@@ -68,6 +68,11 @@ Window {
             }
         }
     }
+    Ball {
+        x: 507 // Centered horizontally to start
+        y: 425
+    }
+
     Bouncer {
         anchors {
             horizontalCenter: parent.horizontalCenter
