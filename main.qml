@@ -69,11 +69,13 @@ Window {
         }
     }
     Ball {
+        id: ball
         x: 507 // Centered horizontally to start
         y: 425
     }
 
     Bouncer {
+        ballTarget: ball
         anchors {
             horizontalCenter: parent.horizontalCenter
             bottom: parent.bottom
