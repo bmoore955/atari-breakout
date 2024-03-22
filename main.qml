@@ -2,6 +2,7 @@ import QtQuick 2.15
 import QtQuick.Window 2.15
 
 Window {
+    id: gameWindow
     title: qsTr("Atari Breakout")
     visibility: Window.Minimized
     width: screenWidth
@@ -69,15 +70,27 @@ Window {
         }
     }
     Ball {
+        id: ball
         x: 507 // Centered horizontally to start
         y: 425
+        onCheck: gameWindow.checkBouncer()
     }
 
     Bouncer {
+        id: bouncer
         anchors {
             horizontalCenter: parent.horizontalCenter
             bottom: parent.bottom
             bottomMargin: 40
+        }
+    }
+
+    function checkBouncer() {
+        if ((ball.x + ball.width / 2 >= bouncer.x) &&
+            (ball.x - ball.width / 2 <= bouncer.x + bouncer.width) &&
+            (ball.y + ball.height >= bouncer.y) &&
+            (ball.y + ball.height <= bouncer.y + bouncer.height)) {
+            ball.goingDown = false
         }
     }
 }

@@ -12,6 +12,8 @@ Rectangle {
     radius: width / 2
     color: "gray"
 
+    signal check()
+
     // Serves to continuously update the velocity of the ball
     Timer {
         interval: 15
@@ -24,6 +26,9 @@ Rectangle {
 
             // Bounce off walls
             checkWalls()
+
+            // Emit signal to check for bouncing off paddle
+            ballBase.check()
         }
 
         // Checks whether the ball is going offscreen
