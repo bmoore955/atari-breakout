@@ -24,10 +24,9 @@ Window {
 
             Repeater {
                 model: blocks.row1.length
-                delegate: Rectangle {
+                delegate: Bounceable {
                     color: "red"
                     width: blocks.row1[index]
-                    height: 50
                 }
             }
         }
@@ -36,10 +35,9 @@ Window {
 
             Repeater {
                 model: blocks.row2.length
-                delegate: Rectangle {
+                delegate: Bounceable {
                     color: "orange"
                     width: blocks.row2[index]
-                    height: 50
                 }
             }
         }
@@ -48,10 +46,9 @@ Window {
 
             Repeater {
                 model: blocks.row3.length
-                delegate: Rectangle {
+                delegate: Bounceable {
                     color: "yellow"
                     width: blocks.row3[index]
-                    height: 50
                 }
             }
         }
@@ -60,10 +57,9 @@ Window {
 
             Repeater {
                 model: blocks.row4.length
-                delegate: Rectangle {
+                delegate: Bounceable {
                     color: "green"
                     width: blocks.row4[index]
-                    height: 50
                 }
             }
         }
