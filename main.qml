@@ -69,7 +69,7 @@ Window {
         }
     }
     Ball {
-        x: 507
+        x: 507 // Centered horizontally to start
         y: 425
     }
 

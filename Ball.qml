@@ -22,6 +22,7 @@ Rectangle {
             ballBase.x += goingRight ? 2 : -2
             ballBase.y += goingDown ? 2 : -2
 
+            // Bounce off walls
             checkWalls()
         }
 
