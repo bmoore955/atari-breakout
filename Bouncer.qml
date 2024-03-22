@@ -21,6 +21,7 @@ Rectangle {
         moved += (screenWidth - dist < step) ? screenWidth - dist : step
     }
 
+    // Processes the position of the ball and bouncer, determines if a bounce is needed
     Connections {
         target: ballTarget
         ignoreUnknownSignals: true
