@@ -2,7 +2,6 @@ import QtQuick 2.15
 import QtQuick.Window 2.15
 
 Window {
-    id: gameWindow
     title: qsTr("Atari Breakout")
     visibility: Window.Minimized
     width: screenWidth
@@ -76,7 +75,6 @@ Window {
     }
 
     Bouncer {
-        id: bouncer
         ballTarget: ball
         anchors {
             horizontalCenter: parent.horizontalCenter
